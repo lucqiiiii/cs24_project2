@@ -6,23 +6,53 @@
 #include "bag.h"
 using namespace std;
 
-class word{
-    public:
-        //Constructor: construct a string array that store all the words
-        //and link that array to a bag array
-	word(unsigned int initial_capacity = 0); 
-        //Modification Member Functions
-        //add a word in the string array wordlist and a bag in the bag array
-        void add_word(string word, string filesname); 
-        //Constant Member Functions
-	int get_information(string word) const;
+class word
+{
+public:
+    typedef string value_type;
+
+    //Constructor:
+    
+    //A doubly linked list with each having a 
+    //next and prev pointer as NULL and a string and list 
+    //including files
+    word(const value_type& w = value_type(), word *n = NULL, word *p = NULL)    {
+    word = w;
+    next = n;
+    prev = p;
+    }
+
+    //Modification Member Functions:
+    
+    void set_word(const value_type &w){ word = w; }
+    void set_next(word *n){ next = n; }
+    void set_prev(word* p){ prev = p; }
+
+    // Observers:
+
+    value_type get_word(){ return word; }
+    
+    //Forward Links:
+
+    word *next_word(){ return next; }
+    const word *next_word(){ return next; }
+
+    //Backword Links:
+
+    word *prev_word(){ return prev; }
+    const word *prev_word(){ return prev; }
+
+    //Constant Member Functions
+    int get_information(string word) const;
 
     private:
-	unsigned int capacity;
-	unsigned int used;
-	string *wordlist;
-	bag *files_word;
+        value_type word;
+        word *next;
+        word *prev;
+	list *file;
 };
+
+//Helper Methods:
 
 
 
