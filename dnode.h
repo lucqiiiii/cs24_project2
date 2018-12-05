@@ -8,7 +8,7 @@ using namespace std;
 class dnode
 {
 public:
-    typedef double value_type;
+    typedef string value_type;
     // constructor
     dnode(const value_type& d=value_type(), dnode* l=NULL, dnode* p=NULL)
     {
@@ -42,7 +42,7 @@ private:
 
 // Helper Methods
 void insert(dnode*& head, dnode*& prev, const dnode::value_type& v){
-    if(prev == NULL){        
+    if(head == NULL){        
         dnode* p;
         p = new dnode(v, head, prev);
         head = p;

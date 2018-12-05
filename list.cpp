@@ -1,10 +1,10 @@
 //Qi Guo Project2
-#include "word.h"
+#include "list.h"
 #include <iostream>
 using namespace std;
 
 //Constructor
-word::word(){
+list::list(){
 	head = NULL;
 }
 
@@ -48,7 +48,3 @@ int word::get_information(string word) const {
 }
 
 */
-
-
-
- 
