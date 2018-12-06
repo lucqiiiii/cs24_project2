@@ -18,6 +18,12 @@ public:
     int get_count() const;
 
 private:
+    struct ldnode{
+        itemtype info;
+        ldnode *next;
+        ldnode *prev;
+    };
     ldnode *head;
+ 
 };
 #endif

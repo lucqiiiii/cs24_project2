@@ -26,7 +26,7 @@ void word::insert(const value_type &word/*,const value_type &filename*/){
     }
     else{
         dnode *n = head;
-        while((n -> info) < word){ //to get to the spot
+        while((n -> info) < word && n != NULL){ //to get to the spot
             n = n -> next;
         }
         dnode *temp = new dnode(word,n -> prev,n);
