@@ -10,10 +10,7 @@ list::list(){
 
 void list::add(const value_type& fname){
     if(head == NULL){
-        head = new ldnode;
-        (head -> info).set_filename(fname);
-        (head -> info).set_count(1);
-        head -> next = NULL;
+        head = new ldnode(fname,head,head);
     }
     else{
         ldnode *n = head;
@@ -24,11 +21,9 @@ void list::add(const value_type& fname){
             }
             n = n -> next;    
         }
-        n -> next = new ldnode;
-        (n -> next -> info).set_filename(fname);
-        (n -> next -> info).set_count(1);
-        n -> next -> next = NULL;
-        n ->next -> prev = n;
-        
+        ldnode *temp = new ldnode(fname,n,n -> prev);
+        n -> prev -> next = temp;
+        n -> prev = temp;
+    }
 }
 

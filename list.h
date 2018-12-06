@@ -12,7 +12,7 @@ public:
     // constructor
     list();
     // modifiers
-    void modif(const value_type& fname);
+    void add(const value_type& fname);
     // observers
     value_type get_fname() const;
     int get_count() const;
@@ -22,6 +22,7 @@ private:
         itemtype info;
         ldnode *next;
         ldnode *prev;
+        ldnode(value_type f, ldnode *n, ldnode *p) : info.file_name(f), info.count(1), next(n), prev(p) {}
     };
     ldnode *head;
  

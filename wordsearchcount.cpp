@@ -59,14 +59,14 @@ int main(int argc, char* argv[])
 	// Now the string "word" holds the keyword, and the string "files[i]" holds the document name.
 	// Use these two strings to search/insert in your array/list of 
 	
-	myword.insert(word/*,files[i]*/);
+	myword.insert(word,files[i]);
       }
     }
     fin.close();    
   }
   cout << "--------------------------------------" << endl;
   cout << "This is the next part of the program " << endl;
-}/*
+}
   string input;
   do{
 	cout << "Enter a word you want to search, "
@@ -75,7 +75,8 @@ int main(int argc, char* argv[])
 	if(input == "exit"){
 		break;
 	}
+        while(myword.)
 	myword.get_information(input);
   }while(true);
 }
-*/
+
