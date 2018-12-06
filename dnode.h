@@ -41,7 +41,7 @@ private:
 };
 
 // Helper Methods
-void insert(dnode*& head, dnode*& prev, const dnode::value_type& v){
+void list_insert(dnode*& head, dnode*& prev, const dnode::value_type& v){
     if(head == NULL){        
         dnode* p;
         p = new dnode(v, head, prev);

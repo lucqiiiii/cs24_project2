@@ -12,15 +12,12 @@ public:
     // constructor
     list();
     // modifiers
-    void add(value_type fname);
+    void modif(const value_type& fname);
     // observers
     value_type get_fname() const;
     int get_count() const;
 
 private:
-    value_type file_name;
-    list *next;
-    list *prev;
-    int count;
+    ldnode *head;
 };
 #endif

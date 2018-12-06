@@ -3,8 +3,8 @@
 #define WORD_H
 #include <iostream>
 #include <cstdlib>
-#include "list.h"
-#include "dnode.h"
+//#include "list.h"
+
 using namespace std;
 
 class word
@@ -15,17 +15,25 @@ public:
     //Constructor:
     word();
 
+    //Destructor:
+    ~word();
+
     //Modification Member Functions:
-    void insert(const value_type& word);
+    void insert(const value_type& word/*, const value_type& filename*/);
 
     // Observers:
-    value_type get_word(){ return word; }
     
     //Constant Member Functions
 
     private:
+        struct dnode{
+            value_type info;
+            dnode *next;
+            dnode *prev;
+        };
+
         dnode *head;
-        list* file_list;
+        //list* file_list;
 };
 
 #endif

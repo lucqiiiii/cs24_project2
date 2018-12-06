@@ -5,7 +5,34 @@ using namespace std;
 
 //Constructor
 word::word(){
-	head = NULL;
+    head = NULL;
+}
+
+//Destructor
+word::~word(){
+    dnode *n = head;
+    while(n){
+        dnode *garbage = n;
+        n = n -> next;
+        delete garbage;
+    }
+}
+
+void word::insert(const value_type &word/*,const value_type &filename*/){
+    if(head == NULL){
+        head = new dnode;
+        head -> info = word;
+        head -> next = NULL;
+    }
+    else{
+        dnode *n = head;
+        while((n -> info) < word){ //to get to the spot
+            n = n -> next;
+        }
+        dnode *temp = new dnode(word,n -> prev,n);
+        n -> prev -> next = temp;
+        n -> prev = temp;
+    }
 }
 
 void word::add_word(string word, string filename){
@@ -47,7 +74,7 @@ int word::get_information(string word) const {
   return 0;
 }
 
-*/
+
 
 
 
