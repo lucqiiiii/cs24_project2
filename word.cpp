@@ -9,7 +9,7 @@ word::word(){
 }
 
 //Destructor
-/*word::~word(){
+word::~word(){
     dnode *n = head;
     while(n){
         dnode *garbage = n;
@@ -17,31 +17,34 @@ word::word(){
         delete garbage;
     }
 }
-*/
-void word::insert(const value_type &word,const value_type &filename){
+
+void word::insert(const string& w){
+    //dnode* wordnode = new dnode(word,NULL,NULL);
     if(head == NULL){
-        head = new dnode(word,head,head);
-        head -> file_list -> add(filename);
+        head = new dnode;
+        head -> word = w;
     }
     else{
         dnode *n = head;
-        if((n -> info) > word){
-            dnode *temp = new dnode(word,n,n -> prev);
+        if((n -> word) > w){
+            dnode *temp = new dnode;
+            temp -> word = w;
+            temp -> next = n;
             n -> prev = temp;
             head = temp;
             return;
         }    
-        while((n -> info) < word && n != NULL){ //to get to the spot
+        while((n -> word) < w && (n -> next) != NULL){ //to get to the spot
             n = n -> next;
         }
-        dnode *temp = new dnode(word,n,n -> prev);
-        n -> prev -> next = temp;
-        n -> prev = temp;
-        temp -> file_list -> add(filename);
+        dnode *temp = new dnode;
+        temp -> word = w;
+        temp -> prev = n;
+        n -> next = temp;
     }
 }
 
-dnode* list_search(const dnode *head, const dnode::value_type target){
+/*dnode* list_search(const dnode *head, const dnode::value_type target){
     dnode *cursor;
     for(cursor = head; cursor != NULL; cursor = cursor -> next){
         if(target == cursor -> info){
@@ -49,7 +52,7 @@ dnode* list_search(const dnode *head, const dnode::value_type target){
         }
     return NULL;
 }
-
+*/
 
 
 

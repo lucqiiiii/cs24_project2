@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 {
   string dir; 
   vector<string> files = vector<string>();
-  word *myword = new word();
+  word *myword = new word;
   int used = 0;
   if (argc < 2)
     {
@@ -59,7 +59,7 @@ int main(int argc, char* argv[])
 	// Now the string "word" holds the keyword, and the string "files[i]" holds the document name.
 	// Use these two strings to search/insert in your array/list of 
 	
-	//myword.insert(word,files[i]);
+	myword -> insert(word);
       }
     }
     fin.close();    
