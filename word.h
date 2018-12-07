@@ -16,13 +16,13 @@ public:
     word();
 
     //Destructor:
-    ~word();
+    //~word();
 
     //Modification Member Functions:
     void insert(const value_type& word, const value_type& filename);
 
     // Observers:
-    
+       
     //Constant Member Functions
 
     private:
@@ -37,5 +37,18 @@ public:
 
         dnode *head;
 };
+
+/*dnode* list_search(const dnode *head, const dnode::value_type target){
+    dnode *cursor;
+    for(cursor = head; cursor != NULL; cursor = cursor -> next){
+        if(target == cursor -> info){
+            return cursor;
+        }
+    return NULL;
+}
+
+
+*/
+
 
 #endif

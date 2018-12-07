@@ -41,3 +41,16 @@ void word::insert(const value_type &word,const value_type &filename){
     }
 }
 
+dnode* list_search(const dnode *head, const dnode::value_type target){
+    dnode *cursor;
+    for(cursor = head; cursor != NULL; cursor = cursor -> next){
+        if(target == cursor -> info){
+            return cursor;
+        }
+    return NULL;
+}
+
+
+
+
+

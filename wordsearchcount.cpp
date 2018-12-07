@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
 {
   string dir; 
   vector<string> files = vector<string>();
-  word myword;
+  word *myword = new word();
   int used = 0;
   if (argc < 2)
     {
@@ -54,12 +54,12 @@ int main(int argc, char* argv[])
       fin>> word;
       if(fin.eof()) {cout << "EOF " << files[i] << endl; break;}
       else {
-	//cout<<files[i]<<"::"<< word <<endl;
+	cout<<files[i]<<"::"<< word <<endl;
 	
 	// Now the string "word" holds the keyword, and the string "files[i]" holds the document name.
 	// Use these two strings to search/insert in your array/list of 
 	
-	myword.insert(word,files[i]);
+	//myword.insert(word,files[i]);
       }
     }
     fin.close();    
@@ -67,7 +67,8 @@ int main(int argc, char* argv[])
   cout << "--------------------------------------" << endl;
   cout << "This is the next part of the program " << endl;
 }
-  string input;
+/*  string input;
+  int num;
   do{
 	cout << "Enter a word you want to search, "
 	<< "or 'exit' to stop the program:";
@@ -75,8 +76,21 @@ int main(int argc, char* argv[])
 	if(input == "exit"){
 		break;
 	}
-        while(myword.)
-	myword.get_information(input);
+        dnode* ptr = myword -> head;
+                
+        while(ptr){
+            if(ptr -> info == input){
+                ptr -> list_file -> 
+        if(answer == NULL){
+            cout << "There is no such word in the list, please try again."
+                 << endl;
+        }
+        else{
+            cout << "Enter a threshold for the appearance of that word: ";
+            cin >> num;
+            answer -> list_file -> search(num);
+        }
+  
   }while(true);
 }
-
+*/
